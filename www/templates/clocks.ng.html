@@ -1,0 +1,17 @@
+<ion-view title="Clocks">
+	<ion-content ng-controller="ClocksCtrl">
+	    <ion-list>
+	    	<ion-item ng-repeat="clock in clocks track by clock.id" class="item-remove-animate">
+		    	<h2>
+					<ds-widget-clock digital-format="'HH:mm:ss'" show-digital="true" theme="dark" ng-attr-gmt-offset="clock.timezone.offset">
+					</ds-widget-clock>
+				</h2>
+				<center><p>{{clock.timezone.name}}<span ng-show="clock.description" class="dash"> - </span> {{clock.description}}</p></center>
+		    	<ion-option-button class="button-assertive icon-left ion-trash-b" ng-click="remove(clock.id)">Delete</ion-option-button>
+	    	</ion-item>
+	    </ion-list>
+	    <div class="padding">
+		    <a class="button button-block button-positive" href="#/tab/clocks-selection">Add Clocks</a>
+	    </div>
+    </ion-content>
+</ion-view>

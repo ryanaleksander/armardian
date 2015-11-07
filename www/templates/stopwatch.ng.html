@@ -1,0 +1,23 @@
+<ion-view title="Stopwatch">
+	<ion-content ng-controller="StopwatchCtrl">
+		<ion-item>
+			<center><div class="timer padding">{{stopwatch.hours}}:{{("00" + stopwatch.minutes).slice(-2)}}:{{("00" + stopwatch.seconds).slice(-2)}}</div>
+			<div class="padding milliseconds"> {{("00" + stopwatch.milliseconds).slice(-2)}} </div>
+			<div class="padding">
+				<button class="button button-positive" ng-click="start()">Start</button>
+				<button class="button button-calm" ng-click="check()">Check</button>
+				<button class="button button-energized" ng-click="reset()">Reset</button>
+				<button class="button button-assertive" ng-click="stop()">Stop</button>
+			</div></center>
+		</ion-item>
+		<ion-list>
+			<ion-item href="#/tab/edit-stopwatch/{{stopwatch.id}}" class="item-remove-animate" ng-repeat="stopwatch in stopwatches">
+				<center>
+					<h2 class="stopwatch-timer">{{stopwatch.time}}</h2>
+					<p>{{stopwatch.description || "No description"}}</p>
+					<ion-option-button class="button-assertive icon-trash-b icon-left" ng-click="remove(stopwatch.id)">Delete</ion-option-button>
+				</center>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

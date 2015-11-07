@@ -1,0 +1,13 @@
+<ion-view title="Edit">
+	<ion-content ng-controller="StopwatchEditCtrl">
+		<ion-list class="list card">
+			<ion-item class="item-input item-floating-label padding">
+				<span class="input-label" ng-model="stopwatch.description">Description</span>
+				<textarea rows="5" placeholder="Description" ng-model="stopwatch.description"></textarea>
+			</ion-item>
+		</ion-list>
+		<div class="padding">
+			<button class="button button-positive button-block" ng-click="save(stopwatch)">Save</button>
+		</div>
+	</ion-content>
+</ion-view>

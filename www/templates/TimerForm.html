@@ -1,0 +1,15 @@
+<form name="countdown">
+	<label class="item item-input">
+		<span class="input-label">Hours</span>
+		<input type="number" ng-model="timer.hours" min="0">
+	</label>
+	<label class="item item-input">
+		<span class="input-label">Minutes</span>
+		<input type="number" ng-model="timer.minutes" min="0"m>
+	</label>
+	<label class="item item-input">
+		<span class="input-label">Seconds</span>
+		<input type="number" ng-model="timer.seconds" min="0">
+	</label>
+</form>
+<p ng-class="{invalid: !validInput}" ng-show="!validInput">Input invalid</p>

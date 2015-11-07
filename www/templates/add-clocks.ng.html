@@ -1,0 +1,20 @@
+<ion-view view-title="Add Clocks" ng-controller="AddCtrl">
+  	<ion-content>
+		<div class="list card">
+			<label class="item item-input item-select">
+				<div class="input-label">
+					Time Zone
+				</div>
+				<select ng-model="clock.timezone" ng-init="clock.timezone = timezones[0]" ng-options="timezone as timezone.name for timezone in timezones">
+				</select>
+			</label>
+			<label class="item item-input item-floating-label">
+				<span class="input-label" ng-model="clock.description">Description</span>
+			    <input type="text" placeholder="Description" ng-model="clock.description">
+			</label>
+		</div>'
+		<div class="padding">
+			<button class="button button-block button-positive" ng-click="save(clock)">Add</button>
+		</div>
+  	</ion-content>
+</ion-view>
